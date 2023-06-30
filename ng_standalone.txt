@@ -1,0 +1,41 @@
+
+Standalone component is new features of angular-15;
+> Standalone component will not load unnecessary until we use that component;
+
+bydefalt -> component will load/imported in app.module.ts file unnecessaryly ; so to overcome this
+            we have to use standalone component;
+
+cmd for CLI create Standalone comp  ----
+    -> ng g c <component_name> --standalone;
+
+To create comp standalone manually ----
+    -> ng g c employee
+    then in employee.component.ts we have add two metadata----
+     @Component({
+        selector:'app-employee'
+        standalone:true,
+        imports:[CommonModule],
+        tempalateUrl:'./employee.cp.html,
+        styleUrls:['./employee.component.css]
+     })
+
+To use this standalone component -------
+--> We have to Implement Routing;
+
+
+---- To add any Depenedency On standalone component we have to write ----
+import{HttpClientModule} from '@angular/common/http';
+  @Component({
+        selector:'app-employee'
+        standalone:true,
+        imports:[CommonModule,HttpClientModule],
+        tempalateUrl:'./employee.cp.html,
+        styleUrls:['./employee.component.css]
+     })
+
+--> Using Standalone , Module level connection are removes 
+    means when the component will load then that only depenedency will load;
+
+
+
+app.module.ts ->> Root module level imports always load unnecessaryly;

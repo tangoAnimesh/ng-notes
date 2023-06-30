@@ -1,0 +1,88 @@
+
+> Services are a great way to share same information 
+  among classes that don't know each other;
+
+
+
+// ---- We can use Services without using @Injectable() Decorator ----
+
+
+
+=> Why we use @Injectable() ?
+=> when we want to create a Nested service or in other word, when
+   we want to use a custom service into another service we have to use @Injectable();
+> It is Use for Inject built-in Dependency like httpclient to an another service;
+> Before Angular-6 we can access service to an another service for that we have to use 
+   only @Injectable();
+
+
+
+
+1> Singleton Object Concept [Module Level]
+--> What is Singleton? ->  Singleton Means One Object;
+    -> When we give module level provider to a service,
+      object of that service will be create as Singleton Object,
+      for all component;
+
+// <-- For access Service in Module/Root level -->
+--------------------> 
+--> Using  this we can access this service any component
+    under this moudle;
+---- cards.module.ts ----
+import {service_name} from 'path/service'
+@NgModule({
+  declarations: [],
+  imports: [
+    CommonModule
+  ],
+  providers:[service_name]
+})
+
+
+2> Multiple Object Concept [Component Level]
+  -> When we give component level provider to a service,
+    means put a service in diffrent component then 
+    this it will create individual own diffrent object;
+
+// -> For access Service in Component level -->
+------------>
+--> Using this we can access this service in particular component;
+---- card.component.ts ----
+import {service_name} from 'path/service'
+@Component({
+   selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css'],
+  providers:[service_name]
+})
+
+
+
+<<---- app.module.ts ->>
+Here import's file will load at first;
+import{} from './path' -> Load somthing from this path;
+
+// ------After Angular-6 we have get this Update provideIn------------
+@Injectable({
+  provideIn:'root'
+})
+
+-> This solution we don't get before Angular-5;
+->> What we need ? --> This solution we get by using provideIn concept after Angular-6;
+   -> When we go to any component then should service load 
+       & service should register in module level also;
+
+   --> Problem----
+      If we import service in moudle level then if hit url  service will load,
+      this is an drawback , suppose there is  a payment service user doesn't visited
+      that site then also when user hit url then that payment service also load
+      unnesseary so to remove this problem Angular team introduce provideIn in Angular-6 update;
+
+
+=====> What is provideIn?
+-> provideIn allow service to register in module/root lvl , but don't have to use
+   import statement in module lvl; basically register service module lvl without use importing;
+
+--> So provideIn do Run time service registeration in Module Level[Singleton];
+     so when that component need to load it will load otherwise,
+     it will don't load unnesseary by import statement and provider:[] array;

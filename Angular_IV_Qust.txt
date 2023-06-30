@@ -1,0 +1,22 @@
+-> Shallow Copy vs Deep Copy in js?
+-> Event capturing and event bubbling? 
+
+Q-> Angular Life cycle Methods? What is role of Constructor?
+Q-> How to initialize a service in Angular component?
+Q-> what is singleton service? -> Inject in root level in app module.
+-> @Injectable provideIn : root 
+-> @Injectable provideIn : any 
+-> @Injectable provideIn  : Module name where we only want to provide a particular service;
+
+Q-> Observable vs Subscribe in service to Component Interactions?
+A-> we can subscribe manually at component level or we can use async/impure pipe;
+
+Q => What is content Projection? -> <ng-content>
+Q> Subject vs BehaviorSubject vs replaySubject;
+Q> Observable vs Promise? Can we change Observable to Promise?
+Q> Form event in RXJS?  What is View Encapsulation?
+Q> What is guard in angular? what is Snap shot/
+Q> What is resolve in angular? 
+Q> Is input changes in the child component is it will affect parent as well?
+Q> Angular Library?
+

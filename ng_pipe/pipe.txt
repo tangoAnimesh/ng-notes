@@ -1,0 +1,15 @@
+
+Custom Pipe --> 1)pure 2)Impure
+
+Pure: This kind of Pipe rerun whenever there will be change in either
+      Pipe Value or in Pipe Parameters only.
+      By Default Angular creates Pure pipe.
+
+Impure: This kind of Pipe reruns is there will any change in value at
+        entire application at any block i.e component,directive,pipe,service etc.
+        i.e It is used to consumed lots of memory in background to
+        make application slower , so it is not recommended for
+        industry best parctice.
+
+@Pipe({
+ name:'fi

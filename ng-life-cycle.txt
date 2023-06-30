@@ -1,0 +1,49 @@
+==========[ life-cycle-hook-or-comp-life-cycle works ]=========
+-> Every component in Angular has a life-cycle, a series of diff stages
+  that components goes through form initialization to destruction;
+
+-> We can say life-cycle-hooks is a specific funtion that we can call 
+   during the specific point of a life of a component in there angular app;
+
+-> This every life-cycle-hooks are implemented by dedicated interfaces which provide angular/core library;
+
+
+>>> constructor ->  The constructor is a default method in a TS class that automatically gets called when
+	                the class is being instantiated;
+         -> Constructor always run before any angular hook and it is not a part of 
+              Life cycle Hook;
+         
+         -> It is widely used to inject dependencies(services) into the component class;
+         -> called before any hook to inject dependency;
+         -> Whenerver any component run it always call constructor at first;
+
+--> Type  of Hooks --> 
+
+> ngOnChanges     -> called after a bound input property changes;
+> ngOnInit             -> called once the component is initialized; to initialized any property in component use it; 
+> ngDoCheck       -> called during every change detection run;
+> ngAfterContentInit    -> called after the ng-content [content projection] has been pojected into view;
+> ngAfterContentChecked -> called every time projected content has been checked;
+> ngAfterViewInit    --> called after component(child) view has been initialised
+> ngAfterViewChecked --> called every time component(child) view has been checked;
+> ngOnDestroy        --> called once the component is about to destroy;
+
+
+---------------------- Diff B/w Constructor and ngOnInit --------------------
+	Constructor 			ngOnInit 
+1>  It is called before any life cycle	        It is called after ngOnchanges Hooks. 
+     hooks.			
+2> When constructor called , everything       when ngOnInit called, Everything about 
+    in component is not ready , so it's 	     component is already ready, so it's use
+   mostly used for injecting dependency      is to perform most of the business logic
+   only;				    on component;
+3> Constructor is a method od TS class,    ngOnInit is angular life cycle hook,
+    It automaticlly gets called when the 	  which signals the activation  of created 
+   class is being instantiated;		   component
+   
+
+
+
+
+
+

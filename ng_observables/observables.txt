@@ -1,0 +1,9 @@
+------------- HttpClient Return Observable ----------
+
+==> HttpClient Service set/return an Observable;
+==> Observable is Primitive type ,  Observables are  a lazy collections of
+    multiple values or data  over a period of time,
+    Observable open the continous channel of communication where multiple 
+    values are emited over  time;
+
+==> Using subscribe() method / async pipe we get http Observable response data;
